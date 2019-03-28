@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 class Cart extends Component
 {
+    /*
+     * Render the component
+     * @TODO: Table body needs to be filled with the games in the shopping cart
+     */
     render() {
         return (
             <main>
@@ -20,6 +24,7 @@ class Cart extends Component
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
                                     
                                 </tbody>
                                 <tfoot>

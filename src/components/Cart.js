@@ -2,6 +2,44 @@ import React, { Component } from 'react'
 
 class Cart extends Component
 {
+    /* createCartItems
+     * ---------------
+     * Hiermee creeeren we voor iedere game in de shoppingcart een rij
+     * in de tabel (zie render -> tbody)
+     *
+     */
+    createCartItems = () => {
+        const cart = this.props.cart
+
+        return cart.map(
+            (game) => {
+                return (
+                    <tr key={game.id}>
+                        <td>
+                            <img
+                                className="shopping-cart-image"
+                                src={game.image}
+                                alt={game.title}
+                                title={game.title}
+                            />
+                        </td>
+                        <td>{game.title}</td>
+                        <td className="text-center">
+                            <i className="fas fa-minus-square"></i>
+                            {game.amount}
+                            <i className="fas fa-plus-square"></i>
+                        </td>
+                        <td className="text-right">&euro; {game.price}</td>
+                        <td className="text-right">&euro; </td>
+                    </tr>
+                )
+            }
+        )
+    }
+    /*
+     * Render the component
+     * @TODO: Table body needs to be filled with the games in the shopping cart
+     */
     render() {
         return (
             <main>
@@ -20,7 +58,7 @@ class Cart extends Component
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    {this.createCartItems()}                                    
                                 </tbody>
                                 <tfoot>
                                     <tr>

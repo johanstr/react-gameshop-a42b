@@ -159,7 +159,7 @@ class App extends Component {
             />
             <Route
               path='/cart'
-              render={() => <Cart />}
+              render={() => <Cart cart={this.state.cart}/>}
             />
             <Footer />
           </>
